@@ -540,20 +540,8 @@ end
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/ffgringoxp123-code/gui/refs/heads/main/KittylolGuI_UI.lua"))()
 local Window = Library:init("KITTYLOL")
 
--- Tab chính
+-- Tab Combat
 local CombatTab = Window:create_tab("Combat", "rbxassetid://13320902290")
-
--- Anti Lag
-CombatTab:create_checkbox({
-    title = "Anti Lag",
-    callback = function(state)
-        if state then
-            Antilag:Enable()
-        else
-            Antilag:Disable()
-        end
-    end
-})
 
 CombatTab:create_divider("Parry")
 
@@ -576,6 +564,21 @@ CombatTab:create_checkbox({
             ManualSpam:Start()
         else
             ManualSpam:Stop()
+        end
+    end
+})
+
+-- ===== TAB SETTING (mới thêm) =====
+local SettingTab = Window:create_tab("Setting", "rbxassetid://13320902290")
+
+-- Anti Lag (đã chuyển xuống đây)
+SettingTab:create_checkbox({
+    title = "Anti Lag",
+    callback = function(state)
+        if state then
+            Antilag:Enable()
+        else
+            Antilag:Disable()
         end
     end
 })
